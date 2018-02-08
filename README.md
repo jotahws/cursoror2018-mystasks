@@ -1,24 +1,4 @@
-# README
+# Aplicação Ruby para o curso de Ruby on Rails UFPR 2018
+## Professor **Alex Kutzke** - [alexkutzke](https://github.com/alexkutzke)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Aula base deste repositório: [Aula 3](https://github.com/alexkutzke/cursoror18-material/blob/master/03.md)
