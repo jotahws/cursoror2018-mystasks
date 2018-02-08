@@ -1,5 +1,13 @@
 {
   "name": "mytasks",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jotahws/cursoror2018-mystasks.git",
+  "license": "MIT",
+  "description": "Aplicação teste do Curso de ROR",
+  "author": "João Wind"
 }
