@@ -13,4 +13,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery/dist/jquery
 //= require bootstrap/dist/js/bootstrap
+
+$(document).on("ajax:before", function(){
+  console.log("loading");
+})

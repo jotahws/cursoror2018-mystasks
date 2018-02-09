@@ -9,6 +9,32 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="<%= root_url %>">MyTasks Ruby</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item navbar-text">
+                Olá <strong><%= current_user.email %></strong>!
+              </li>
+            </ul>
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+              <li class="nav-item">
+                <%= link_to "Editar perfil", edit_user_registration_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <% end %>
+    <div class="container">
+      <p class="notice mt-4"><%= notice %></p>
+      <p class="alert mt-4"><%= alert %></p>
+        <%= yield %>
+    <div>
   </body>
 </html>

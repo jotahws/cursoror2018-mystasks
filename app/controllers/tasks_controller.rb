@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /tasks
   # GET /tasks.json
@@ -25,6 +26,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
+    @task.user_id = current_user.id
 
     respond_to do |format|
       if @task.save
@@ -40,6 +42,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
+    @task.user_id = current_user.id
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to root_url, notice: 'Task was successfully updated.' }
@@ -65,7 +68,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.done = !@task.done
     @task.save
-    redirect_to root_url
+
+    # redirect_to root_url
   end
 
   private

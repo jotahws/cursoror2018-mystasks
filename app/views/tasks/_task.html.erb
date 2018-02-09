@@ -1,0 +1,11 @@
+<tr id="task_<%= task.id %>">
+	<td width="*">
+		<%= link_to task.done? ? "[X]" : "[ ]", toggle_task_path(task), remote: true %>
+		<%= task.name %>
+	</td>
+  <td class="text-right">
+    <%= link_to "Fazer", toggle_task_path(task), class: "btn btn-sm btn-success",  remote: true  %> <!-- manda a requisição via ajax -->
+    <%= link_to "Editar", edit_task_path(task), class: "btn btn-sm btn-primary"  %>
+		<%= link_to "Apagar", task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+	</td>
+</tr>
